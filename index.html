@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplicacion generador color gradientes en tiempo real - Vue 3">
+
+
+    <!--Metadata para PWA-->
+    <!--Color para barra de estado Android-->
+    <meta name="theme-color" content="#f5f5dc">
+    <!--Optimización de SEO-->
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <!--Modoficar barra de estado en iOS-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+    <title>Degradados</title>
+
+    <!--Iconos-->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./img/favicon.png">
+    <link rel="apple-touch-startup-image" href="./img/favicon.png">
+
+    <!--Manifest para PWA-->
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- Normalizador de Estilos para cpompatibilidad -->
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Vue js 3 -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2 id="title">{{title}}</h2>
+        <hr>
+
+        <form action="">
+            <label for="">Color 1: <input type="color" v-model="color1"></label>
+            <label for="">Color 2: <input type="color" v-model="color2"></label>
+
+        </form>
+
+        <p>HEX 1: {{color1}}</p>
+        <p>HEX 2: {{color2}}</p>
+
+        <form action="">
+            <label>
+            <input type="text" class="vcss" :value="setColor">
+            </label>
+            <br>
+            <label>
+            <input type="radio" class="radio" value="1" v-model.number="orientacion">Right
+            </label>
+            <label>
+            <input type="radio" class="radio" value="2" v-model.number="orientacion">Left
+            </label>
+            <label>
+            <input type="radio" class="radio" value="3" v-model.number="orientacion">Top
+            </label>
+            <label>
+            <input type="radio" class="radio" value="4" v-model.number="orientacion">Buttom
+            </label>
+            <br>
+
+        </form>
+
+        <br><br>
+        <div class="area" :style="setColor"></div>
+    </div>
+
+    <script src="./load.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/mountApp.js"></script>
+</body>
+
+</html>
